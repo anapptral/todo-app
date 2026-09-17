@@ -11,3 +11,6 @@ npm-debug.log*
 
 # Freebuff tooling (preview server, run docs) — not part of the app
 .freebuff/
+.vercel
+.env*
+.env.local

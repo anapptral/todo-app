@@ -131,3 +131,8 @@ export function createApp() {
 
   return app;
 }
+
+// One app instance per module (per serverless instance). Vercel's Express
+// detection wants entry modules to default-export the app itself.
+const app = createApp();
+export default app;
