@@ -1,0 +1,13 @@
+# Secrets and local artifacts — never commit
+.env
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+node_modules/
+npm-debug.log*
+.DS_Store
+
+# Freebuff tooling (preview server, run docs) — not part of the app
+.freebuff/

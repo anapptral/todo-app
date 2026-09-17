@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>To-do list</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="card">
+      <!-- Auth view -->
+      <section id="auth-view">
+        <h1>To-do list</h1>
+        <div class="tabs">
+          <button id="tab-login" class="tab active" type="button">Log in</button>
+          <button id="tab-register" class="tab" type="button">Register</button>
+        </div>
+        <form id="auth-form">
+          <label for="username">Username</label>
+          <input id="username" name="username" autocomplete="username" required />
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required />
+          <button id="auth-submit" type="submit">Log in</button>
+        </form>
+        <p id="auth-error" class="error" hidden></p>
+      </section>
+
+      <!-- Tasks view -->
+      <section id="tasks-view" hidden>
+        <header class="tasks-header">
+          <h1>My to-do list</h1>
+          <button id="logout-btn" type="button">Log out</button>
+        </header>
+        <p id="greeting"></p>
+        <form id="task-form">
+          <input id="task-title" placeholder="Add a task…" maxlength="200" required />
+          <button type="submit">Add</button>
+        </form>
+        <ul id="task-list"></ul>
+        <p id="tasks-error" class="error" hidden></p>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>
