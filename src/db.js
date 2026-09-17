@@ -3,7 +3,12 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const dbPath = process.env.DB_PATH ?? path.join(__dirname, '..', 'data.db');
+// Serverless platforms (Vercel) have a read-only app directory; only /tmp is
+// writable there, so the demo DB lives in /tmp and resets on cold starts.
+// Locally the DB stays in the project root (gitignored). Override with DB_PATH.
+const dbPath =
+  process.env.DB_PATH ??
+  (process.env.VERCEL ? '/tmp/todo-demo.db' : path.join(__dirname, '..', 'data.db'));
 
 export const db = new DatabaseSync(dbPath);
 
